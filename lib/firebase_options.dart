@@ -52,6 +52,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '813617140631',
     projectId: 'kisi-kisi-uts-2026',
     authDomain: 'kisi-kisi-uts-2026.firebaseapp.com',
+    databaseURL: 'https://kisi-kisi-uts-2026-default-rtdb.firebaseio.com',
     storageBucket: 'kisi-kisi-uts-2026.firebasestorage.app',
   );
 
@@ -60,6 +61,7 @@ class DefaultFirebaseOptions {
     appId: '1:813617140631:android:f5278dda242636e72baad2',
     messagingSenderId: '813617140631',
     projectId: 'kisi-kisi-uts-2026',
+    databaseURL: 'https://kisi-kisi-uts-2026-default-rtdb.firebaseio.com',
     storageBucket: 'kisi-kisi-uts-2026.firebasestorage.app',
   );
 
@@ -69,6 +71,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '813617140631',
     projectId: 'kisi-kisi-uts-2026',
     authDomain: 'kisi-kisi-uts-2026.firebaseapp.com',
+    databaseURL: 'https://kisi-kisi-uts-2026-default-rtdb.firebaseio.com',
     storageBucket: 'kisi-kisi-uts-2026.firebasestorage.app',
   );
+
 }
