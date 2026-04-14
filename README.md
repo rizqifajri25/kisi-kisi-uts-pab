@@ -1,3 +1,22 @@
+# 1. Install Firebase CLI (via NPM)
+npm install -g firebase-tools
+Login ke Firebase:
+
+firebase login
+
+# 2. Install FlutterFire CLI
+dart pub global activate flutterfire_cli
+
+# 3. Hubungkan Firebase ke Project Flutter
+Jalankan di root project Flutter:
+
+flutterfire configure
+Langkah ini akan:
+
+Menghubungkan project ke Firebase
+Membuat file konfigurasi:
+lib/firebase_options.dart
+
 # Aplikasi Pendataan Narapidana - Flutter + Firebase Realtime Database
 
 Project ini dibuat untuk memenuhi kisi-kisi UTS praktek dengan ketentuan:
