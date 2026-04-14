@@ -17,6 +17,121 @@ Menghubungkan project ke Firebase
 Membuat file konfigurasi:
 lib/firebase_options.dart
 
+# 4. Install Dependency Flutter
+Tambahkan ke pubspec.yaml:
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  firebase_core: ^3.15.2
+  firebase_auth: ^5.3.3
+  cloud_firestore: ^5.6.12
+Kemudian jalankan:
+
+flutter pub get
+
+# 5. Inisialisasi Firebase
+Edit file main.dart:
+
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(const MyApp());
+}
+
+# 6. Setup Authentication
+Buka Firebase Console
+
+Pilih project
+
+Masuk ke Authentication → Sign-in Method
+
+Aktifkan:
+
+Email/Password
+
+# 7. Setup Firestore Database
+Masuk ke Firestore Database
+Klik Create Database
+Pilih Start in Test Mode
+Pilih region
+
+# 8. Contoh Penggunaan
+✅ Register User
+import 'package:firebase_auth/firebase_auth.dart';
+
+Future<void> register(String email, String password) async {
+  await FirebaseAuth.instance.createUserWithEmailAndPassword(
+    email: email,
+    password: password,
+  );
+}
+✅ Login User
+Future<void> login(String email, String password) async {
+  await FirebaseAuth.instance.signInWithEmailAndPassword(
+    email: email,
+    password: password,
+  );
+}
+✅ Tambah Data ke Firestore
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+Future<void> addUser() async {
+  await FirebaseFirestore.instance.collection('users').add({
+    'name': 'Kensa',
+    'age': 20,
+  });
+}
+✅ Ambil Data dari Firestore
+Future<void> getUsers() async {
+  var data = await FirebaseFirestore.instance.collection('users').get();
+
+  for (var doc in data.docs) {
+    print(doc.data());
+  }
+}
+
+# Troubleshooting
+Firebase belum diinisialisasi
+Error:
+
+## Firebase has not been initialized
+Solusi: Pastikan:
+
+await Firebase.initializeApp();
+
+## File konfigurasi tidak ditemukan
+Pastikan sudah menjalankan:
+
+flutterfire configure
+
+## Permission Firestore ditolak
+Gunakan rule sementara (untuk testing):
+
+allow read, write: if true;
+Jangan gunakan di production!
+
+## Error setelah setup
+Coba jalankan:
+
+flutter clean
+flutter pub get
+
+# Catatan Penting
+Flutter tidak menggunakan NPM untuk dependency
+NPM hanya digunakan untuk install Firebase CLI
+Gunakan FlutterFire CLI untuk konfigurasi otomatis
+
+
 # Aplikasi Pendataan Narapidana - Flutter + Firebase Realtime Database
 
 Project ini dibuat untuk memenuhi kisi-kisi UTS praktek dengan ketentuan:
