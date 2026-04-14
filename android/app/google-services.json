@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "813617140631",
+    "project_id": "kisi-kisi-uts-2026",
+    "storage_bucket": "kisi-kisi-uts-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813617140631:android:f5278dda242636e72baad2",
+        "android_client_info": {
+          "package_name": "com.example.kisi_kisi_uts"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAHtsF96Jd2U6o1JGge5DrZxumqIU_V9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
